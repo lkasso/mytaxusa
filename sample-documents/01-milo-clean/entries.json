@@ -1,0 +1,42 @@
+{
+  "first": "Milo",
+  "last": "Ledger",
+  "dob": "1988-04-12",
+  "ssn": "000-12-3456",
+  "occupation": "Observatory technician",
+  "address": "42 Fictional Lane",
+  "city": "Los Angeles",
+  "region": "CA",
+  "zip": "90001",
+  "phone": "310-555-0100",
+  "status": "Single",
+  "has_interest": "Yes",
+  "has_unemployment": "No",
+  "dependent": "No",
+  "blind": "No",
+  "unsupported_income": "No",
+  "needs_itemized": "No",
+  "claim_credit": "No",
+  "other_credit_needed": "No",
+  "foreign": "No",
+  "interest": "325.75",
+  "interest_withheld": "0",
+  "unemployment": "0",
+  "unemployment_withheld": "0",
+  "estimated": "0",
+  "extension": "0",
+  "w2s": [
+    {
+      "employer": "Paperclip Observatory LLC",
+      "ein": "00-1234567",
+      "address": "100 Imaginary Avenue, Los Angeles, CA 90001",
+      "wages": "62400.00",
+      "withheld": "7800.00",
+      "ss_wages": "62400.00",
+      "ss_tax": "3868.80",
+      "medicare_wages": "62400.00",
+      "medicare_tax": "904.80"
+    }
+  ],
+  "dependents": []
+}

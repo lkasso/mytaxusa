@@ -1,0 +1,54 @@
+{
+  "first": "Milo",
+  "last": "Ledger",
+  "dob": "1988-04-12",
+  "ssn": "000-12-3456",
+  "occupation": "Observatory technician",
+  "address": "42 Fictional Lane",
+  "city": "Los Angeles",
+  "region": "CA",
+  "zip": "90001",
+  "phone": "310-555-0100",
+  "status": "Single",
+  "has_interest": "Yes",
+  "has_unemployment": "No",
+  "dependent": "No",
+  "blind": "No",
+  "unsupported_income": "No",
+  "needs_itemized": "No",
+  "claim_credit": "Yes",
+  "other_credit_needed": "No",
+  "foreign": "No",
+  "interest": "325.75",
+  "interest_withheld": "0",
+  "unemployment": "0",
+  "unemployment_withheld": "0",
+  "estimated": "0",
+  "extension": "0",
+  "w2s": [
+    {
+      "employer": "Paperclip Observatory LLC",
+      "ein": "00-1234567",
+      "address": "100 Imaginary Avenue, Los Angeles, CA 90001",
+      "wages": "52400.00",
+      "withheld": "6200.00",
+      "ss_wages": "52400.00",
+      "ss_tax": "3248.80",
+      "medicare_wages": "52400.00",
+      "medicare_tax": "759.80"
+    }
+  ],
+  "dependents": [
+    {
+      "name": "Avery Ledger",
+      "ssn": "000-12-3457",
+      "dob": "2015-03-09",
+      "relationship": "Child",
+      "months": "12",
+      "own_support": "No",
+      "resident": "Yes",
+      "joint_return": "No",
+      "student": "Yes"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+<section id="review-panel" class="review-panel" aria-label="Pre-filing review">
+  <h2>Pre-filing review</h2>
+  <p class="muted">An AI reviewer reads this return and its attached documents, then recommends pass, warn, or hold. It never changes your return and it does not file anything.</p>
+  <form method="post" action="/review" id="review-form">
+    <input type="hidden" name="csrf" value="{{ csrf }}">
+    <button>Run AI review</button> <span id="review-wait" class="muted" hidden>Reviewing. This takes about a minute.</span>
+  </form>
+  {% if review %}
+    {% if review.stale %}<p class="notice">This return changed after the last review. Run the review again.</p>{% endif %}
+    {% if review.status == 'error' %}
+      <p class="error">Review failed: {{ review.error }}</p>
+    {% else %}
+      {% set report = review.report %}
+      {% if report.verdict %}<h3>Verdict: <span class="verdict verdict-{{ report.verdict }}">{{ report.verdict|upper }}</span></h3>{% endif %}
+      <p>{{ report.summary }}</p>
+      {% for item in report.suspicious_content or [] %}
+        <p class="notice"><strong>Suspicious content{% if item.document %} in {{ item.document }}{% endif %}:</strong> {{ item.description }}</p>
+      {% endfor %}
+      {% if report.client_questions %}
+        <h3>Questions for the taxpayer</h3>
+        <ol>{% for q in report.client_questions %}<li>{{ q.question }}<br><span class="muted">Why we ask: {{ q.reason }}</span></li>{% endfor %}</ol>
+      {% endif %}
+      {% for finding in report.findings or [] %}
+        <p class="{{ 'error' if finding.severity == 'blocker' else 'notice' }}"><strong>{{ finding.code or finding.field }}</strong> · {{ finding.severity }} · {{ finding.source }}<br>{{ finding.evidence }} <em>{{ finding.recommendation }}</em></p>
+      {% endfor %}
+    {% endif %}
+    {% if review.trail %}
+      <details><summary>What the reviewer did ({{ review.trail|length }} steps)</summary>
+        <ol>{% for step in review.trail %}<li><strong>{{ step.event }}</strong>{% if step.agent %} [{{ step.agent }}]{% endif %}: {{ step.tool }} {{ step.detail }}</li>{% endfor %}</ol>
+      </details>
+    {% endif %}
+    {% if review.cost_usd is not none or review.turns is not none %}
+      <p class="muted">{% if review.cost_usd is not none %}Cost ${{ '%.4f'|format(review.cost_usd) }}{% endif %}{% if review.turns is not none %} · {{ review.turns }} turns{% endif %}</p>
+    {% endif %}
+  {% endif %}
+</section>
+<script src="/static/js/review.js" defer></script>

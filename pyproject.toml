@@ -1,0 +1,14 @@
+[project]
+name = "tax-classroom-demo"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "claude-agent-sdk>=0.2.181",
+    "flask>=3.1,<4",
+    "pdfplumber>=0.11.10",
+    "pypdf>=7.1.0",
+    "reportlab>=5.1.0",
+]
+
+[dependency-groups]
+dev = []

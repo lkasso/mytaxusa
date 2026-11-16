@@ -1,0 +1,8 @@
+{
+  "deterministic_findings": [],
+  "expected_agent_review": {
+    "verdict": "pass",
+    "client_questions": [],
+    "note": "Wages 62,400 vs 58,000 in 2025 is about +7.6%, under the 10% threshold. New interest income of 325.75 is supported by the 1099-INT."
+  }
+}

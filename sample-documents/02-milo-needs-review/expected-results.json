@@ -1,0 +1,24 @@
+{
+  "deterministic_findings": [
+    "PRIOR_DEPENDENTS_CHANGED"
+  ],
+  "expected_agent_review": {
+    "verdict": "hold",
+    "findings": "The W-2 shows wages 62,400 and withholding 7,800. The return has 52,400 and 6,200. Boxes 3 to 6 differ too.",
+    "client_questions": "Avery Ledger is claimed this year and was not on the 2025 return: what changed, did Avery live with Milo more than half the year, and could anyone else claim Avery.",
+    "note": "The 1099-INT matches. Diagnostics report only PRIOR_DEPENDENTS_CHANGED."
+  },
+  "calculated_totals": {
+    "wages": "52400.00",
+    "income": "52725.75",
+    "adjustments": "0",
+    "agi": "52725.75",
+    "deduction": "14600",
+    "taxable": "38125.75",
+    "credits": "2000",
+    "tax": "2343.09",
+    "payments": "6200.00",
+    "refund": "3856.91",
+    "owed": "0"
+  }
+}
